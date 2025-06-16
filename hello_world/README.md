@@ -1,0 +1,1 @@
+The purpose of this README is to provide a description of the 'hello_world' directory.
