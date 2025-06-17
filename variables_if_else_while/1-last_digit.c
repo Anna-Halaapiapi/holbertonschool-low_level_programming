@@ -16,7 +16,7 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 
 /* create local variable using modulus for last digit*/
-	int lastdigit = n % 10;
+	lastdigit = n % 10;
 
 	/* prints string with value of n and last digit */
 	printf("Last digit of %d is %d", n, lastdigit);
