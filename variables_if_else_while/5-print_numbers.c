@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - entry point
- * Description: Prints string using puts function
+ * Description: Prints numbers 0-9
  * Return: 0 (success)
  */
 
