@@ -6,11 +6,8 @@
 
 void print_alphabet_x10(void)
 
-{
 	int n = 0;
 	char c;
-
-
 
 /* outer loop - runs while n is less than 10 */
 while (n < 10)
@@ -29,7 +26,4 @@ while (n < 10)
 /* prints new line and increments n by 1 */
 	_putchar('\n');
 	n = n + 1;
-}
-
-
 }
