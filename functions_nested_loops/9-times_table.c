@@ -25,22 +25,24 @@ void times_table(void)
 /* calc value of n3 */
 		n3 = n2 * n1;
 /* print single or double digits */
-		if (n3 >= 10)
+		if (n3 > 9)
 		{
 		_putchar('0' + n3 / 10);
 		_putchar('0' + n3 % 10);
+		_putchar(',');
+		_putchar(' ');
 		}
-		else
+		else if (n3 < 9)
 		{
 		_putchar('0' + n3);
-		if (n2 !=0)
-			_putchar(' ');
+		_putchar(',');
+		_putchar(' ');
+		_putchar(' ');
 		}
 /* dont put a ', ' if n2 is 9 (end of line) */
-		if (n2 != 9)
+		if (n3 == 9)
 		{
-			_putchar(',');
-			_putchar(' ');
+			_putchar('0' + n3);
 		}
 
 	n2 = n2 + 1;
