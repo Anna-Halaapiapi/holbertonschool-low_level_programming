@@ -40,7 +40,7 @@ void times_table(void)
 		_putchar(' ');
 		}
 /* dont put a ', ' if n2 is 9 (end of line) */
-		if (n3 == 9)
+		else if (n3 == 9)
 		{
 			_putchar('0' + n3);
 		}
