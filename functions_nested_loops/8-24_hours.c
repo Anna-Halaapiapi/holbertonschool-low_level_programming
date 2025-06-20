@@ -7,7 +7,6 @@
 void jack_bauer(void)
 {
 	int h = 0;
-	int m = 0;
 
 /* outer hr loop */
 	while (h < 24)
