@@ -25,7 +25,7 @@ void times_table(void)
 /* calc value of n3 */
 		n3 = n2 * n1;
 /* print single or double digits */
-		if (n3 > 9)
+		if (n3 >= 10)
 		{
 		_putchar('0' + n3 / 10);
 		_putchar('0' + n3 % 10);
@@ -38,6 +38,8 @@ void times_table(void)
 		if (n2 != 9)
 		{
 			_putchar(',');
+			_putchar(' ');
+		if (n3 < 10)
 			_putchar(' ');
 		}
 
