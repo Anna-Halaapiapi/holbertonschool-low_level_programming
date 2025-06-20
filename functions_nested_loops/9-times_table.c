@@ -26,7 +26,7 @@ void times_table(void)
 		n3 = n2 * n1;
 /* print single or double digits */
 
-		if (n3 < 10)
+		if (n3 < 10 && n2 !=0)
 		_putchar(' ');
 
 		if (n3 >= 10)
