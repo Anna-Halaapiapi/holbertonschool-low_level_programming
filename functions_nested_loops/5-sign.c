@@ -13,7 +13,6 @@ int print_sign(int n)
 
 /* if n is greater/equal to 0 - print '+, 1' and newline */
 {
-	int n;
 
 	if (n >= 0)
 	{
