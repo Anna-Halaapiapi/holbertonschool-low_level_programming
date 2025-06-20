@@ -10,12 +10,12 @@ void jack_bauer(void)
 	int m = 0;
 
 /* outer hr loop */
-	while(h < 24)
+	while (h < 24)
 	{
 /* reset mins at start of each hr */
 		int m = 0;
 /* inner min loop */
-		while(m < 60)
+		while (m < 60)
 		{
 			_putchar('0' + h / 10);
 			_putchar('0' + h % 10);
@@ -26,6 +26,6 @@ void jack_bauer(void)
 			m = m + 1;
 		}
 			h = h + 1;
-		}
+	}
 
 }
