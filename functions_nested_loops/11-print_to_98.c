@@ -14,14 +14,14 @@ void print_to_98(int n)
 /* scenario - n is greater than 98 */
 	if (n > 98)
 	{
-		printf("%d, \n", n);
+		printf("%d, ", n);
 		n = n - 1;
 	}
 /* scenario - is less than 98 */
 
 	else if (n < 98)
 	{
-		printf("%d, \n", n);
+		printf("%d, ", n);
 		n = n + 1;
 	}
 	}
