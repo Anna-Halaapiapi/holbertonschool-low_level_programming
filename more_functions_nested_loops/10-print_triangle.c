@@ -22,8 +22,8 @@ void print_triangle(int size)
 		int width = 0;
 
 
-/* inner loop for columns for spaces and '#' */
-		while(width < size - count - 1)
+/* inner loop for columns to print spaces and '#' */
+		while (width < size - count - 1)
 		{
 			_putchar(' ');
 			width = width + 1;
