@@ -7,7 +7,7 @@
  * Return: void
  */
 
-void main(int)
+int main(void)
 {
 
 	int n = 1;
