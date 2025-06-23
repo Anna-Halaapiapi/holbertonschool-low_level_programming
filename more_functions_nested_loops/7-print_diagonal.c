@@ -11,13 +11,26 @@ void print_diagonal(int n)
 
 {
 	int count = 0;
-	char c = ' ';
+
+	if (n <= 0)
+	{
+		_putchar('\n');
+		return;
+	}
 
 	while (count < n)
 	{
-		_putchar(c);
+		int col = 0;
+
+		while (col < count)
+	{
+
+		_putchar(' ');
+		col = col + 1;
+	}
+		_putchar('\\');
+		_putchar('\n');
+
 		count = count + 1;
 	}
-	_putchar('\\');
-	_putchar('\n');
 }
