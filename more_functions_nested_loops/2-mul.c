@@ -12,5 +12,6 @@ int mul(int a, int b)
 {
 	/* int to hold result of multiplication */
 	int c = a * b;
+
 	return (c);
 }
