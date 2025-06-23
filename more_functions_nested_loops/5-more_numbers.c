@@ -18,9 +18,13 @@ while (r <= 10)
 /* inner loop for cols */
 	while (c <= 14)
 	{
-		_putchar('0' + c / 10);
-		_putchar('0' + c % 10);
-		c = c + 1;
+		if (c >=10)
+		{
+			_putchar('0' + c / 10);
+		}
+
+	_putchar('0' + c % 10);
+	c = c + 1;
 	}
 
 	_putchar('\n');
