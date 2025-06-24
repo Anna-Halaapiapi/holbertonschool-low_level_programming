@@ -28,13 +28,13 @@ void rev_string(char *s)
 
 
 /* char swap loop - swaps 1st and last char moving toward middle of string */
-	while(start < s)
+	while (start < s)
 	{
-        int temp = *start;
-        *start = *s;
-        *s = temp;
+		int temp = *start;
+		*start = *s;
+		*s = temp;
 
-	start = start + 1;
-	s = s - 1;
+		start = start + 1;
+		s = s - 1;
 	}
 }
