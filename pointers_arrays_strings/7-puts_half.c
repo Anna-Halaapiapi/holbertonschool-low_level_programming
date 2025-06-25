@@ -1,13 +1,12 @@
 #include "main.h"
 
 /**
- * main - entry point
  * puts_half - prints second half of string
  * @str: pointer to string str
  * Return: void
  */
 
-void main(char *str)
+void puts_half(char *str)
 {
 /* save starting address of str */
 	char *start = str;
