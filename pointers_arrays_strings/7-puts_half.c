@@ -8,6 +8,7 @@
 
 void puts_half(char *str)
 {
+	int halflength;
 /* save starting address of str */
 	char *start = str;
 
@@ -23,7 +24,6 @@ void puts_half(char *str)
 str = start;
 
 /* find half length for even and odd strings */
-int halflength;
 if (length % 2 == 00)
 {
 	halflength = length / 2;
@@ -37,9 +37,9 @@ halflength = (length + 1) / 2;
 str = start + halflength;
 
 /* print from mid point to null term */
-while (str != '\0')
+while (*str != '\0')
 {
-	_putchar (*str);
+	_putchar(*str);
 	str = str + 1;
 }
 putchar('\n');
