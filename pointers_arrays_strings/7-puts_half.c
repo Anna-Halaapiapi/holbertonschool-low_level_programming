@@ -40,7 +40,7 @@ str = start + halflength;
 /* print from mid point to null term */
 while (str != '\0')
 {
-	putchar (*str);
+	_putchar (*str);
 	str = str + 1;
 }
 putchar('\n');
