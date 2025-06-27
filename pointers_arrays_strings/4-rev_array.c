@@ -8,25 +8,26 @@
 void reverse_array(int *a, int n)
 
 {
+/* declare var to hold a temp value & index positions */
 
-	int n = 0;
+	int temp;
+	int startindex = 0;
+	int endindex = n - 1;
 
-/* save start address of array */
-	int *start = a;
-
-/*  find length of array, a pointer moves to null */
-	while (*a != '\0')
+/* loop to swap numbers in array */
+	while (startindex < endindex)
 	{
-		n = n + 1;
-		a = a + 1;
-	}
-/* bring pointer back 1 from null */
-	a = a - 1;
+/* put start value in temp */
+		temp = a[startindex];
 
-/* print numbers in reverse */
-	while (a >= start)
-	{
-		_putchar(*a);
-		a = a - 1;
+/* put end value in start index posistion */
+		a[startindex] = a[endindex];
+
+/* put start value from temp into end index position */
+		a[endindex] = temp;
+
+/* increment start index & decrement end index */
+		startindex = startindex + 1;
+		endindex = endindex - 1;
 	}
 }
