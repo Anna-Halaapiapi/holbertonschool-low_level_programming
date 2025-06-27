@@ -8,7 +8,8 @@
 void reverse_array(int *a, int n)
 
 {
-	int length;
+
+	int n = 0;
 
 /* save start address of array */
 	int *start = a;
@@ -16,7 +17,7 @@ void reverse_array(int *a, int n)
 /*  find length of array, a pointer moves to null */
 	while (*a != '\0')
 	{
-		length = length + 1;
+		n = n + 1;
 		a = a + 1;
 	}
 /* bring pointer back 1 from null */
