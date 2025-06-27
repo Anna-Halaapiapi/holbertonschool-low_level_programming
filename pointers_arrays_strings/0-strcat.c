@@ -24,23 +24,13 @@ char *_strcat(char *dest, char *src)
 		dest = dest + 1;
 	}
 
-/* find length of src, src pointer moves to null
-	int srclength = 0;
-
-	while (*src != '\0')
-	{
-		srclength = srclength + 1;
-		src = src + 1;
-	}
-	*/
-
 /* copy src to end of dest */
 
 	int index;
 
 	for (index = 0; src[index] != '\0'; index = index + 1)
 	{
-		dest[destlength + index] = src [index];
+		dest[destlength + index] = src[index];
 	}
 	dest[destlength + index] = '\0';
 	return (deststart);
