@@ -10,9 +10,11 @@
 char *_strcat(char *dest, char *src)
 
 {
-/* save starting address of dest and src */
+/* save starting address of dest */
 	char *deststart = dest;
-	char *srcstart = src;
+
+/* declare var to hold index position */
+	int index;
 
 /* find length of string dest and move dest pointer to null of dest */
 
@@ -25,8 +27,6 @@ char *_strcat(char *dest, char *src)
 	}
 
 /* copy src to end of dest */
-
-	int index;
 
 	for (index = 0; src[index] != '\0'; index = index + 1)
 	{
