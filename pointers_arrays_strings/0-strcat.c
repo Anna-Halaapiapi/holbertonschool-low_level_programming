@@ -26,6 +26,9 @@ char *_strcat(char *dest, char *src)
 		dest = dest + 1;
 	}
 
+/* reset dest pointer to start */
+	dest = deststart;
+
 /* copy src to end of dest */
 
 	for (index = 0; src[index] != '\0'; index = index + 1)
