@@ -27,7 +27,7 @@ char *cap_string(char *string)
 	while (separators[index] != '\0')
 	{
 /* checks if previous char is a separator */
-		if (*string - 1 == separators[index])
+		if (*(string - 1) == separators[index])
 		{
 /* check if char is lowercase & capitalise it */
 			if (*string >= 'a' && *string <= 'z')
