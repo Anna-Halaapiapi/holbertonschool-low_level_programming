@@ -10,7 +10,7 @@
 unsigned int _strspn(char *s, char *accept)
 
 {
-	int length = 0; /* keep track of how many matches found */
+	unsigned int length = 0; /* keep track of how many matches found */
 	char *acceptcopy; /* copy of accept to use in loops */
 	int matchflag; /* keep track of if match is found */
 
