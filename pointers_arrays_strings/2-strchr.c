@@ -19,6 +19,11 @@ char *_strchr(char *s, char c)
 		}
 		s = s + 1;
 	}
-/* return NULL if no c found */
+/* checks if c is looking for null term */
+	if (c == '\0')
+	{
+	return (s);
+	}
+/* return null if c not found */
 	return (NULL);
 }
