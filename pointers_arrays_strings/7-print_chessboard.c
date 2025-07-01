@@ -9,11 +9,12 @@
 void print_chessboard(char (*a)[8])
 {
 	int row = 0;
-	int col = 0;
+	int col;
 
 /* outer loop through rows */
 	while (row < 8)
 	{
+		col = 0;
 
 /* inner loop through columns */
 		while (col < 8)
@@ -21,7 +22,7 @@ void print_chessboard(char (*a)[8])
 			_putchar(a[row][col]);
 			col = col + 1;
 		}
-		_putchar('\n');
-		row = row + 1;
+	_putchar('\n');
+	row = row + 1;
 	}
 }
