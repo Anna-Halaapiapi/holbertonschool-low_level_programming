@@ -21,7 +21,7 @@ void print_diagsums(int *a, int size)
 /* loop for diagonal value 1 */
 	while (row < size)
 	{
-		d1 = d1 + a[row][column];
+		d1 = d1 + a[row][col];
 		col = col + 1;
 		row = row + 1;
 	}
