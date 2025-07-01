@@ -35,5 +35,5 @@ void print_diagsums(int *a, int size)
 	}
 
 	printf("%d, ", d1);
-	printf("%d", d2);
+	printf("%d\n", d2);
 }
