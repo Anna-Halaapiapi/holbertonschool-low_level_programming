@@ -14,28 +14,24 @@ void print_diagsums(int *a, int size)
 	int d1 = 0;
 	int d2 = 0;
 
-/* keep track of row/col position */
-	int row = 0;
-	int col = 0;
+/* keep track of index position */
+	int index = 0;
 
 /* loop for diagonal value 1 */
-	while (row < size)
+	while (index < size * size)
 	{
-		d1 = d1 + *a[row][col];
-		col = col + 1;
-		row = row + 1;
+		d1 = d1 + a[index];
+		index = index + size + 1;
 	}
 
-/* starting index positions for 2nd loop */
-	col = 0;
-	row = size - 1;
+/* reset index position to first value of d2 */
+	index = size - 1;
 
 /* loop for diagonal value 2 */
-	while (col < size)
+	while (index < size * size)
 	{
-		d2 = d2 + *a[row][col];
-		col = col + 1;
-		row = row - 1;
+		d2 = d2 + a[index];
+		index = index + size - 1;
 	}
 
 	printf("%d, ", d1);
