@@ -18,7 +18,7 @@ void print_chessboard(char (*a)[8])
 /* inner loop through columns */
 		while (col < 8)
 		{
-			_putchar(*a[row][col]);
+			_putchar(a[row][col]);
 			col = col + 1;
 		}
 		_putchar('\n');
