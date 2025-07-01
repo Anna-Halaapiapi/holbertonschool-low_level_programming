@@ -28,7 +28,7 @@ void print_diagsums(int *a, int size)
 	index = size - 1;
 
 /* loop for diagonal value 2 */
-	while (index < size * size)
+	while (index <= size * (size - 1))
 	{
 		d2 = d2 + a[index];
 		index = index + size - 1;
