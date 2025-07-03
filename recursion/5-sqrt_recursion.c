@@ -21,7 +21,7 @@ int _sqrt_extra_function(int n, int odd, int sqrt)
 		return (-1);
 	}
 /* recursion to return updated n, odd and sqrt values in next function */
-	return _sqrt_extra_function(n - odd, odd + 2, sqrt + 1);
+	return (_sqrt_extra_function(n - odd, odd + 2, sqrt + 1));
 }
 
 /**
