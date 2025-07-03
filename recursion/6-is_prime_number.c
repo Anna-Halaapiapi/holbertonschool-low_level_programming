@@ -40,5 +40,5 @@ int is_prime_number(int n)
 		return (1);
 	}
 /* recursive case from divisor of 2 */
-	return (primecheckern, 2))
+	return ((primechecker, 2))
 }
