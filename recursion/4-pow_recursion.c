@@ -23,6 +23,6 @@ int _pow_recursion(int x, int y)
 /* recursion */
 	if (y != 0)
 	{
-		return _pow_recursion(x, (y-1));
+		return (_pow_recursion(x, (y - 1)));
 	}
 }
