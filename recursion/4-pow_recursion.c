@@ -22,7 +22,7 @@ int _pow_recursion(int x, int y)
 		return (result);
 	}
 
-	else if (y != 0)
+	else
 	{
 		result = _pow_recursion(x, y - 1);
 	}
