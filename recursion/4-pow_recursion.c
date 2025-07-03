@@ -9,6 +9,8 @@
 int _pow_recursion(int x, int y)
 {
 
+	int result = 1;
+
 /* error for y less than 0 */
 	if (y < 0)
 	{
@@ -17,12 +19,13 @@ int _pow_recursion(int x, int y)
 /* edge case */
 	if (y == 0)
 	{
-		return (1);
+		return (result);
 	}
 
 /* recursion */
 	if (y != 0)
 	{
-		return (_pow_recursion(x, (y - 1)));
+		result = _pow_recursion (x, (y - 1));
 	}
+	return (result);
 }
