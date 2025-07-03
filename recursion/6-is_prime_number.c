@@ -4,12 +4,13 @@
  * primechecker - extra function, checks if number is divisible
  * @n: number to check if prime or not
  * @d: current divisor
+ * Return: 1 (n is prime number) or 0 (n is not a prime number)
  */
 
 int primechecker(int n, int d)
 {
 /* if divisor is greater than n/2, n is a prime number */
-	if (d > n/2)
+	if (d > n / 2)
 	{
 		return (1);
 	}
@@ -19,7 +20,10 @@ int primechecker(int n, int d)
 		return (0);
 	}
 /* recursive case */
-	else return (primechecker(n, d + 1));
+	else
+	{
+		return (primechecker(n, d + 1));
+	}
 }
 
 /**
@@ -40,5 +44,5 @@ int is_prime_number(int n)
 		return (1);
 	}
 /* recursive case from divisor of 2 */
-	return ((primechecker, 2))
+	return (primechecker, 2)
 }
