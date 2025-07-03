@@ -8,8 +8,6 @@
 
 int _pow_recursion(int x, int y)
 {
-/* keep track of the result of calc */
-	int result = 0;
 
 /* error for y less than 0 */
 	if (y < 0)
@@ -25,6 +23,6 @@ int _pow_recursion(int x, int y)
 /* recursion */
 	if (y != 0)
 	{
-		return (x * y(x, y - 1));
+		return _pow_recursion(x, (y-1));
 	}
 }
