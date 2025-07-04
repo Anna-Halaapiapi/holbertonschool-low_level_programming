@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
 /* convert string to int */
 		currentnum = atoi(argv[stringindex]);
 		result = result + currentnum;
+		stringindex = stringindex + 1;
 	}
 /* print result */
 	printf("%d\n", result);
