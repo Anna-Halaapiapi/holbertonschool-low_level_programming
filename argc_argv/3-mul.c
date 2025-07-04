@@ -5,7 +5,7 @@
  * main - program entry point
  * @argc: argument count
  * @argv: argument vector - array of pointers to strings
- * Return: result of multiplication or Error if 2 numbers not received
+ * Return: 0 (success) or 1 (error)
  */
 
 int main(int argc, char *argv[])
@@ -28,4 +28,5 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+	return (0);
 }
