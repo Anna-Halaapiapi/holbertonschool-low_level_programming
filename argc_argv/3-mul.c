@@ -10,14 +10,15 @@
 
 int main(int argc, char *argv[])
 {
-/* change char nums to int nums */
 	int result = 0;
-	int number1 = atoi(argv[1]);
-	int number2 = atoi(argv[2]);
 
 /* if 2 numbers are entered */
 	if (argc == 3)
 	{
+/* change char nums to int nums */
+		int number1 = atoi(argv[1]);
+		int number2 = atoi(argv[2]);
+
 /* multiply numbers, print result to std output */
 		result = number1 * number2;
 		printf("%d\n", result);
