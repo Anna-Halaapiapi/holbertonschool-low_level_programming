@@ -40,9 +40,10 @@ int main(int argc, char *argv[])
 		}
 
 /* convert string to int */
-		currentnumber = atoi(argv[stringindex]);
-		result = result + currentnumber;
+		currentnum = atoi(argv[stringindex]);
+		result = result + currentnum;
 	}
 /* print result */
 	printf("%d\n", result);
+	return (0);
 }
