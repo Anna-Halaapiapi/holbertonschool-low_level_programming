@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - program entry point
@@ -16,16 +17,13 @@ int main(int argc, char *argv[])
 
 /* if 2 numbers are entered */
 	if (argc == 3)
-	{
 
 /* multiply numbers, print result to std output */
-		result = number1 * number 2;
+		result = number1 * number2;
 		printf("%d\n", result);
-	}
+
 /* return error if 2 numbers not received */
 	else
-	{
 		printf("Error\n");
 		return (1);
-	}
 }
