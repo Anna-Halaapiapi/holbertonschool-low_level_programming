@@ -9,19 +9,23 @@
 
 int main(int argc, char *argv[])
 {
-
+/* change char nums to int nums */
 	int result = 0;
+	int number1 = atoi(argv[1]);
+	int number2 = atoi(argv[2]);
 
-/* multiplies 2 numbers index 1 and 2, returns result */
+/* if 2 numbers are entered */
 	if (argc == 3)
 	{
-		result = argv[1] * argv[2];
+
+/* multiply numbers, print result to std output */
+		result = number1 * number 2;
 		printf("%d\n", result);
 	}
-
 /* return error if 2 numbers not received */
 	else
 	{
-		return ("Error");
+		printf("Error\n");
+		return (1);
 	}
 }
