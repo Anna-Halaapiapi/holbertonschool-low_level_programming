@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - entry
- * @argv: argument vector - pointer to array of strings
+ * main - program entry point
+ * @argc: argument count (unused)
+ * @argv: argument vector - array of pointers to strings
  * Return: 0 (success)
  */
 
