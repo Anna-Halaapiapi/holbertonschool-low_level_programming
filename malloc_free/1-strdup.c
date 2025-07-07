@@ -27,7 +27,7 @@ char *_strdup(char *str)
 	copyofstr = (char *)malloc(strlen(str) + 1);
 
 /* loop through to copy str into copystr */
-	while (str != '\0')
+	while (*str != '\0')
 	{
 
 /* check for successful allocation and copy str into copyofstr */
