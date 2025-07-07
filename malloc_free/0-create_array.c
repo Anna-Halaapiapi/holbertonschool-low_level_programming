@@ -30,7 +30,7 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 /* loop through array and initialise with c */
-	while (array[index] < size)
+	while (index < size)
 	{
 		array[index] = c;
 		index = index + 1;
