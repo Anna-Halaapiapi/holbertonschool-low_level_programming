@@ -9,14 +9,16 @@
  */
 char *str_concat(char *s1, char *s2)
 {
+	int s1length = 0, s2length = 0, index, totallength;
+	char *s1start, *s2start, *final;
 
 	if (s1 == NULL) /* NULL pointers to be treated as empty string */
 	s1 = "";
 	if (s2 == NULL)
 	s2 = "";
 
-	int s1length = 0, s2length = 0, index, totallength;
-	char *s1start = s1, *s2start = s2, *final;
+	s1start = s1;
+	s2start = s2;
 
 	for (; *s1 != '\0'; s1++) /* find length of s1 */
 	s1length = s1length + 1;
