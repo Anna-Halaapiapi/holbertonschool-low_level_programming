@@ -27,7 +27,7 @@ char *str_concat(char *s1, char *s2)
 		s2length = s2length + 1;
 		s2 = s2 + 1;
 	}
-	int totallength = s1 length + s2 length;
+	int totallength = s1length + s2length;
 
 	final = malloc(totallength + 1); /* malloc both lengths + null term */
 
