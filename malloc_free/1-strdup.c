@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stddef.h> /* for NULL */
 #include <stdlib.h> /* for malloc & free */
-#include <string.h> /* for strlen */
 
 /**
  * _strdup - duplicates string
@@ -11,41 +10,36 @@
 
 char *_strdup(char *str)
 {
-/* declare var to hold a copy of str */
-	char *copyofstr;
+	char *copyofstr; /* for copy of str */
+	unsigned int index = 0; /* keep track of index position */
+	int length = 0; /* for length of str */
+	char startofstr = str; /* for copy of start of str */
 
-/* declare var to keep track of index position */
-	unsigned int index = 0;
-
-/* return NULL if str is NULL */
-	if (str == NULL)
+	if (str == NULL) /* return NULL if str is NULL */
 	{
 		return (NULL);
 	}
-
-/* allocate memory for the copy of string */
-	copyofstr = (char *)malloc(strlen(str) + 1);
-
-/* loop through to copy str into copystr */
-	while (*str != '\0')
+	while (*str != '\0') /* find length of str */
 	{
+		length = length + 1;
+		str = str + 1;
+	}
+	copyofstr = ((char *)malloc(length) + 1); /* malloc for copyofstr */
 
-/* check for successful allocation and copy str into copyofstr */
-	if (copyofstr != NULL)
+	str = startofstr; /* reset pointer of str to starting address */
+
+	while (*str != '\0') /* loop through str to copy str into copystr */
+	{
+	if (copyofstr != NULL) /* if malloc successful, duplicate str */
 	{
 		copyofstr[index] = str[index];
 	}
-/* if allocattion unsuccessful, return NULL */
-	else
+	else /* if allocattion unsuccessful, return NULL */
 	{
 		return (NULL);
 	}
-
 	index = index + 1;
 	}
-/* return pointer to copyofstr */
-	return (copyofstr);
-
-/* free new string */
-	free(str);
+	return (copyofstr); /* return pointer to copyofstr */
+	free(str); /* free old string */
 }
