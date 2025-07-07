@@ -15,6 +15,7 @@ char *str_concat(char *s1, char *s2)
 	char *s1start = s1; /* keep track of s1 start address */
 	char *s2start = s2; /* keep track of s2 start address */
 	char *final; /* for memory allocation */
+	int totallength = s1length + s2length;
 
 	while (*s1 != '\0') /* find length of s1 */
 	{
@@ -27,7 +28,7 @@ char *str_concat(char *s1, char *s2)
 		s2length = s2length + 1;
 		s2 = s2 + 1;
 	}
-	int totallength = s1length + s2length;
+
 
 	final = malloc(totallength + 1); /* malloc both lengths + null term */
 
