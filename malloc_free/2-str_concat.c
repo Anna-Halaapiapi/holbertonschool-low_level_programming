@@ -15,8 +15,12 @@ char *str_concat(char *s1, char *s2)
 	char *s1start = s1; /* keep track of s1 start address */
 	char *s2start = s2; /* keep track of s2 start address */
 	char *final; /* for memory allocation */
-	int totallength = s1length + s2length;
+	int totallength; /* for s1 + s2 */
 
+	if (s1 == NULL) /* NULL to be treated as empty strings */
+	s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	while (*s1 != '\0') /* find length of s1 */
 	{
 		s1length = s1length + 1;
@@ -28,8 +32,7 @@ char *str_concat(char *s1, char *s2)
 		s2length = s2length + 1;
 		s2 = s2 + 1;
 	}
-
-
+	totallength = s1length + s2length;
 	final = malloc(totallength + 1); /* malloc both lengths + null term */
 
 	if (final == NULL) /* if malloc unsuccessful - return NULL */
@@ -38,11 +41,18 @@ char *str_concat(char *s1, char *s2)
 	}
 	s1 = s1start; /* reset s1 and s2 pointers to their starts */
 	s2 = s2start;
-	while (s2[index] != '\0') /* append s2 to end of s1 */
+
+	while (s1[index] != '\0') /* copy s1 to final */
 	{
-		s1[s1length + index] = s2[index];
+		final[index] = s1[index];
 		index = index + 1;
 	}
-	s1[s1length + index] = '\0'; /* add null term to end */
-	return (s1); /* return start of s1 */
+	index = 0; /* reset index */
+	while (s2[index] != '\0') /* copy s2 to end of s1 in final */
+	{
+		final[s1length + index] = s2[index];
+		index = index + 1;
+	}
+	final[totallength] = '\0'; /* add null term to end */
+	return (final); /* return final */
 }
