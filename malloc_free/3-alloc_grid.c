@@ -9,7 +9,7 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int **grid;
+	int **grid;/* pointer to a pointer */
 	int rowindex = 0, colindex = 0, counter = 0;
 
 	if (height <= 0 || width <= 0)/* return NULL if height/width <= 0 */
@@ -26,12 +26,12 @@ int **alloc_grid(int width, int height)
 
 		if (grid[rowindex] == NULL)/* if malloc fails, free and NULL */
 		{
-			while (counter < rowindex)
+			while (counter < rowindex)/* free prior malloc'd rows */
 			{
 			free(grid[counter]);
 			counter = counter + 1;
 			}
-			free(grid);
+			free(grid);/* then free the array of pointers */
 			return (NULL);
 		}
 		rowindex = rowindex + 1;
