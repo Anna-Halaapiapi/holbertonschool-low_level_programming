@@ -13,10 +13,10 @@ void free_grid(int **grid, int height);
 	int rowindex = 0; /* keep track of row index position */
 
 /* free each row */
-	while(rowindex < height)
+	while (rowindex < height)
 	{
-	free(grid[rowindex])
-	rowindex = rowindex + 1;
+		free(grid[rowindex]);
+		rowindex = rowindex + 1;
 	}
 /* free pointer to array of pointers */
 	free(grid);
