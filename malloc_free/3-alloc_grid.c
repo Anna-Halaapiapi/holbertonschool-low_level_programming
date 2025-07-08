@@ -25,7 +25,7 @@ int **alloc_grid(int width, int height)
 		grid[rowindex] = malloc(sizeof(int) * width);
 		if (grid[rowindex] == NULL)/* if malloc fails, free and NULL */
 		{
-			free(grid[rowindex];
+			free(grid[rowindex];)
 			return (NULL);
 		}
 		rowindex = rowindex + 1;
