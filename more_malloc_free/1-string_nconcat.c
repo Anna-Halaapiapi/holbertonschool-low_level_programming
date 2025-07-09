@@ -12,13 +12,16 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *memory; /* pointer for new memory */
+	char *memory, *s1start, *s2start;
 	int index, s1length = 0, totallength = 0, s2count = 0;
 
 	if (s1 == NULL) /* if NULL is passed treat as empty string */
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
+
+	s1start = s1; /* save start addresses of s1 and s2 */
+	s2start = s2;
 
 	while (*s1 != '\0') /* find length of s1 */
 	{
@@ -33,10 +36,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (memory == NULL) /* return NULL if malloc fails */
 		return (NULL);
 
+	s1 = s1start; /* reset s1 & s2 to start */
+	s2 = s2start;
+
 	for (index = 0; s1[index] != '\0'; index++) /* copy s1 to memory */
 		memory[index] = s1[index];
 
-	for (; s2[s2count] != '\0'; s2count++) /* copy n of s2 to memory */
+	for (; s2[s2count] <= n; s2count++) /* copy n of s2 to memory */
 		memory[index] = s2[s2count];
 
 	memory[index] = '\0'; /* add null term to the end of string */
