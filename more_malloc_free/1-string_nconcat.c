@@ -12,38 +12,32 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *memory, *s1start, *s2start;
-	int index, s1length = 0, totallength = 0, s2count = 0;
+	char *memory;
+	unsigned int index, s1length, s2length, totallength = 0, i;
 
 	if (s1 == NULL) /* if NULL is passed treat as empty string */
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	s1start = s1; /* save start addresses of s1 and s2 */
-	s2start = s2;
+	/* find length of s1 */
+	for (s1length = 0; s1[s1length] != '\0'; s1length++)
+		;
+	/* find how many chars from s2 should be included (some or all of s2) */
+	for (s2length = 0; s2length < n && s2[s2length] != '\0'; s2length++)
+		;
+	totallength = s1length + s2length; /* find total length */
 
-	while (*s1 != '\0') /* find length of s1 */
-	{
-		s1length = s1length + 1;
-		s1 = s1 + 1;
-	}
-
-	totallength = s1length + n; /* find total length */
-
-	memory = malloc(totallength + 1); /* malloc */
+	memory = malloc(totallength + 1); /* malloc + null term */
 
 	if (memory == NULL) /* return NULL if malloc fails */
 		return (NULL);
 
-	s1 = s1start; /* reset s1 & s2 to start */
-	s2 = s2start;
-
-	for (index = 0; s1[index] != '\0'; index++) /* copy s1 to memory */
+	for (index = 0; index < s1length; index++) /* copy s1 to memory */
 		memory[index] = s1[index];
 
-	for (; s2[s2count] <= n; s2count++) /* copy n of s2 to memory */
-		memory[index] = s2[s2count];
+	for (i = 0; i < s2length; index++, i++) /* copy s2 to memory */
+		memory[index] = s2[i];
 
 	memory[index] = '\0'; /* add null term to the end of string */
 
