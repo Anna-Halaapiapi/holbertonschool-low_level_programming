@@ -10,9 +10,9 @@
 
 void *malloc_checked(unsigned int b)
 {
-	int *memory; /* pointer to allocated memory */
+	void *memory; /* pointer to allocated memory */
 
-	memory = malloc(sizeof(int *) * b); /* malloc */
+	memory = malloc(b); /* malloc */
 
 	if (memory == NULL) /* malloc check */
 	{
