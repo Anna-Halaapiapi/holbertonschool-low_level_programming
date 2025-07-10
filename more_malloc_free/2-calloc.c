@@ -13,7 +13,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 /* vars */
 	int *memory; /* pointer to memory */
-	int index;
+	unsigned int index;
 
 /* return NULL if nmemb or size is 0 */
 	if (nmemb == 0 || size == 0)
