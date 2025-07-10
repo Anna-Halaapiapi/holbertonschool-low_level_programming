@@ -1,0 +1,41 @@
+#include "dog.h"
+#include <stdio.h>
+#include <stddef.h> /* for NULL */
+
+/**
+ * print_dog - prints struct dog
+ * @d: pointer to struct dog
+ * Return: void
+ */
+
+void print_dog(struct dog *d)
+{
+	char *name;
+	float age;
+	char *owner;
+
+/* if d is NULL print nothing */
+	if (d == NULL)
+	{
+		return;
+	}
+
+/* intialise variables of struct dog */
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
+
+/* print struct dog elements */
+	if (name == NULL)
+		printf("Name: (nil)\n");
+	else
+		printf("Name: %s\n", name);
+	if (age == NULL)
+		printf("Age: (nil)\n");
+	else
+		printf("Age: %1f\n", age);
+	if (owner == NULL)
+		printf("Owner: (nil)\n");
+	else
+		printf("Owner: %s\n", owner);
+}
