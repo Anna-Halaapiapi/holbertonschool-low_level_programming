@@ -25,7 +25,7 @@ int *array_range(int min, int max)
 	arrsize = max - min + 1;
 
 /* malloc */
-	memory = malloc(arrsize);
+	memory = malloc(arrsize * sizeof(int));
 
 /* malloc check - if malloc fails return NULL */
 	if (memory == NULL)
