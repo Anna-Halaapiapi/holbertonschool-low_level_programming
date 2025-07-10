@@ -1,6 +1,3 @@
-#ifndef _dog_h_
-#define _dog_h_
-
 #include "dog.h"
 #include <stdio.h>
 #include <stddef.h> /* for NULL */
@@ -26,4 +23,3 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 	d->age = age;
 	(*d).owner = owner;
 }
-#endif /* _dog_h_ */
