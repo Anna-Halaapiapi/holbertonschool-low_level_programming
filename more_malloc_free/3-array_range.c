@@ -34,7 +34,7 @@ int *array_range(int min, int max)
 	}
 
 /* innitialise array */
-	while (index <= arrsize)
+	while (index < arrsize)
 	{
 		memory[index] = min;
 		min = min + 1;
