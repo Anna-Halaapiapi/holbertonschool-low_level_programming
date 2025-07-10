@@ -12,8 +12,8 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 /* vars */
-	unsigned int *memory; /* pointer to memory */
-	unsigned int index;
+	char *memory; /* pointer to memory */
+	unsigned int index = 0;
 
 /* return NULL if nmemb or size is 0 */
 	if (nmemb == 0 || size == 0)
@@ -22,7 +22,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 
 /* malloc the array */
-	memory = malloc(nmemb * sizeof(size));
+	memory = malloc(nmemb * size);
 
 /* check if malloc fails */
 	if (memory == NULL)
