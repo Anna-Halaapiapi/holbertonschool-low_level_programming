@@ -32,7 +32,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 
 /* intialise array to 0 */
-	while (memory[index] <= nmemb)
+	while (index < nmemb * size)
 	{
 		memory[index] = 0;
 		index = index + 1;
