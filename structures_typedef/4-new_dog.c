@@ -15,15 +15,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 /* declare var of type dog_t */
 	dog_t dog1;
 
-/* return NULL */
-	if (dog_t == NULL)
-	{
-		return (NULL);
-	}
 /* assign values to members */
-	dog_t->name = name;
-	dog_t->age = age;
-	dog_t->owner = owner;
+	dog1.name = name;
+	dog1.age = age;
+	dog1.owner = owner;
 
-	return (dog_t);
+	return (dog1);
 }
