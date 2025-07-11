@@ -49,41 +49,30 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *namememory, *ownermemory;
 	dog_t *dog1;
 
-/* check for NULL entries */
-	if (name == NULL || owner == NULL)
+	if (name == NULL || owner == NULL) /* check for NULL entries */
 	return (NULL);
-
-/* malloc the struct and check for failure */
-	dog1 = malloc(sizeof(dog_t));
+	dog1 = malloc(sizeof(dog_t)); /* malloc the struct */
 	if (dog1 == NULL)
 		return (NULL);
-
-/* calc string lengths */
-	namelength = _strlen(name);
+	namelength = _strlen(name); /* calc string lengths */
 	ownerlength = _strlen(owner);
-
-/* malloc space for each string & check for malloc faiure */
-	namememory = malloc(sizeof(char) * (namelength +1));
+	namememory = malloc(sizeof(char) * (namelength + 1));/*malloc for name*/
 	if (namememory == NULL)
 	{
 		free(dog1);
 		return (NULL);
 	}
-	ownermemory = malloc(sizeof(char) * (ownerlength +1));
+	ownermemory = malloc(sizeof(char) * (ownerlength + 1));/*malloc owner*/
 	if (ownermemory == NULL)
 	{
 		free(namememory);
 		free(dog1);
 		return (NULL);
 	}
-/* copy name and owner string to new memory */
-	_strcpy(namememory, name);
+	_strcpy(namememory, name);/* copy name and owner to new memory */
 	_strcpy(ownermemory, owner);
-
-/* assign values */
-	dog1->name = namememory;
+	dog1->name = namememory;/* assign values */
 	dog1->age = age;
 	dog1->owner = ownermemory;
-
 	return (dog1); /* return pointer to new dog */
 }
