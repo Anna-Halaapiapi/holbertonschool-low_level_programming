@@ -54,6 +54,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	stringmemory[i] = '\0';
 	j = 0;
+	i = i + 1;
 	while (owner[j] != '\0') /* copy owner to heap memory */
 	{
 		stringmemory[i] = owner[j];
