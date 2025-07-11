@@ -4,6 +4,24 @@
 #include <stdlib.h> /* for malloc & free */
 
 /**
+ * _strlen - calculates length of strung
+ * @s - pointer to string
+ * Return: length of string as int
+ */
+
+int _strlen(char *s)
+{
+	int counter = 0;
+
+	while (*s != '\0')
+	{
+		counter = counter + 1;
+		s = s + 1;
+	}
+	return (counter);
+}
+
+/**
  * new_dog - creates a new dog
  * @name: pointer to dog name
  * @age: age of dog
@@ -13,7 +31,7 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int namelength, ownerlength, totalstringlength, i, j;
+	int namelength, ownerlength, totallength, i, j;
 	char *stringmemory;
 	dog_t *dog1;
 
@@ -24,8 +42,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	namelength = strlen(name); /* find length of name string */
-	ownerlength = strlen(owner); /* find length of owner string */
+	namelength = _strlen(name); /* find length of name string */
+	ownerlength = _strlen(owner); /* find length of owner string */
 	totallength = namelength + ownerlength + 2; /* calc total length */
 
 	stringmemory = malloc(totallength); /* malloc for strings */
@@ -52,5 +70,5 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	stringmemory[i] = '\0';
 
-	return (dog1);
+	return (dog1); /* return pointer to new dog */
 }
