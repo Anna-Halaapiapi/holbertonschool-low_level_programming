@@ -18,51 +18,72 @@ int _strlen(char *s)
 	return (counter);
 }
 /**
+ * _strcpy - copies string from src to dest
+ * @dest: pointer to string dest
+ * @src: pointer to string src
+ * Return: pointer to dest
+ */
+
+char *_strcpy(char *dest, char *src)
+
+{
+	int i;
+
+	for (i = 0; src[i] != '\0' ; i = i + 1)
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+/**
  * new_dog - creates a new dog
  * @name: pointer to dog name
  * @age: age of dog
  * @owner: pointer to dog owner
- * Return: NULL if function fails
+ * Return: pointer to new dog or NULL if function fails
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int namelength, ownerlength, totallength, i = 0, j = 0;
-	char *stringmemory, *stringmemorystart;
+	int namelength, ownerlength;
+	char *namememory, *ownermemory;
 	dog_t *dog1;
 
-	dog1 = (dog_t *)malloc(sizeof(dog_t)); /* malloc struct instance */
-	if (dog1 == NULL) /* check if malloc failed */
-	{
+/* check for NULL entries */
+	if (name == NULL || owner == NULL)
+	return (NULL);
+
+/* malloc the struct and check for failure */
+	dog1 = malloc(sizeof(dog_t));
+	if (dog1 == NULL)
 		return (NULL);
-	}
-	namelength = _strlen(name); /* find length of name string */
-	ownerlength = _strlen(owner); /* find length of owner string */
-	totallength = namelength + ownerlength + 2; /* calc total length */
-	stringmemory = malloc(totallength); /* malloc for strings */
-	if (stringmemory == NULL) /* check if malloc failed */
+
+/* calc string lengths */
+	namelength = _strlen(name);
+	ownerlength = _strlen(owner);
+
+/* malloc space for each string & check for malloc faiure */
+	namememory = malloc(sizeof(char) * (namelength +1));
+	if (namememory == NULL)
 	{
 		free(dog1);
 		return (NULL);
 	}
-	stringmemorystart = stringmemory; /* save start of memory address */
-	while (name[j] != '\0') /* copy name to heap memory */
+	ownermemory = malloc(sizeof(char) * (ownerlength +1));
+	if (ownermemory == NULL)
 	{
-		stringmemory[i] = name[j];
-		i++;
-		j++;
+		free(namememory);
+		free(dog1);
+		return (NULL);
 	}
-	stringmemory[i] = '\0';
-	j = 0;
-	i = i + 1;
-	while (owner[j] != '\0') /* copy owner to heap memory */
-	{
-		stringmemory[i] = owner[j];
-		i++;
-		j++;
-	}
-	stringmemory[i] = '\0';
-	dog1->name = stringmemorystart;/* assign values */
+/* copy name and owner string to new memory */
+	_strcpy(namememory, name);
+	_strcpy(ownermemory, owner);
+
+/* assign values */
+	dog1->name = namememory;
 	dog1->age = age;
-	dog1->owner = stringmemorystart + namelength + 1;
+	dog1->owner = ownermemory;
+
 	return (dog1); /* return pointer to new dog */
 }
