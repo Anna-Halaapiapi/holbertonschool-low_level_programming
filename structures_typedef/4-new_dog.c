@@ -33,7 +33,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog1 = (dog_t *)malloc(sizeof(dog_t)); /* malloc struct instance */
 	if (dog1 == NULL) /* check if malloc failed */
 	{
-		free(dog1);
 		return (NULL);
 	}
 	namelength = _strlen(name); /* find length of name string */
@@ -42,7 +41,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	stringmemory = malloc(totallength); /* malloc for strings */
 	if (stringmemory == NULL) /* check if malloc failed */
 	{
-		free(stringmemory);
+		free(dog1);
 		return (NULL);
 	}
 	stringmemorystart = stringmemory; /* save start of memory address */
