@@ -73,9 +73,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	stringmemory[i] = '\0';
 
-	dog1->name = stringmemory;/* assign values */
+	dog1->name = stringmemorystart;/* assign values */
 	dog1->age = age;
-	dog1->owner = stringmemory + namelength + 1;
+	dog1->owner = stringmemorystart + namelength + 1;
 
 	return (dog1); /* return pointer to new dog */
 }
