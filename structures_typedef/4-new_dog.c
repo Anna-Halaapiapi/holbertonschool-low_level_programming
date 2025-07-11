@@ -11,8 +11,10 @@ int _strlen(char *s)
 	int counter = 0;
 
 	while (*s != '\0')
+	{
 		counter = counter + 1;
 		s = s + 1;
+	}
 	return (counter);
 }
 /**
@@ -30,15 +32,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	dog1 = (dog_t *)malloc(sizeof(dog_t)); /* malloc struct instance */
 	if (dog1 == NULL) /* check if malloc failed */
+	{
 		free(dog1);
 		return (NULL);
+	}
 	namelength = _strlen(name); /* find length of name string */
 	ownerlength = _strlen(owner); /* find length of owner string */
 	totallength = namelength + ownerlength + 2; /* calc total length */
 	stringmemory = malloc(totallength); /* malloc for strings */
 	if (stringmemory == NULL) /* check if malloc failed */
+	{
 		free(stringmemory);
 		return (NULL);
+	}
 	stringmemorystart = stringmemory; /* save start of memory address */
 	while (name[j] != '\0') /* copy name to heap memory */
 	{
