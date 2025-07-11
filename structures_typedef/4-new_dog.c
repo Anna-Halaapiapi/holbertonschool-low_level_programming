@@ -31,8 +31,8 @@ int _strlen(char *s)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int namelength, ownerlength, totallength, i, j;
-	char *stringmemory, stringmemorystart;
+	int namelength, ownerlength, totallength, i = 0, j = 0;
+	char *stringmemory, *stringmemorystart;
 	dog_t *dog1;
 
 	dog1 = (dog_t *)malloc(sizeof(dog_t)); /* malloc struct instance */
@@ -54,7 +54,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	/* save start of string memory address */
-	stringmemorystart = *stringmemory;
+	stringmemorystart = stringmemory;
 
 	while (name[j] != '\0') /* copy name to heap memory */
 	{
