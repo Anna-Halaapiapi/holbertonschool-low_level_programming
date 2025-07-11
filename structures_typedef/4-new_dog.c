@@ -1,26 +1,20 @@
 #include "dog.h"
-#include <stdio.h>
 #include <stddef.h> /* for NULL */
 #include <stdlib.h> /* for malloc & free */
-
 /**
  * _strlen - calculates length of strung
- * @s - pointer to string
+ * @s: pointer to string
  * Return: length of string as int
  */
-
 int _strlen(char *s)
 {
 	int counter = 0;
 
 	while (*s != '\0')
-	{
 		counter = counter + 1;
 		s = s + 1;
-	}
 	return (counter);
 }
-
 /**
  * new_dog - creates a new dog
  * @name: pointer to dog name
@@ -28,7 +22,6 @@ int _strlen(char *s)
  * @owner: pointer to dog owner
  * Return: NULL if function fails
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	int namelength, ownerlength, totallength, i = 0, j = 0;
@@ -36,26 +29,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *dog1;
 
 	dog1 = (dog_t *)malloc(sizeof(dog_t)); /* malloc struct instance */
-
 	if (dog1 == NULL) /* check if malloc failed */
-	{
+		free(dog1);
 		return (NULL);
-	}
-
 	namelength = _strlen(name); /* find length of name string */
 	ownerlength = _strlen(owner); /* find length of owner string */
 	totallength = namelength + ownerlength + 2; /* calc total length */
-
 	stringmemory = malloc(totallength); /* malloc for strings */
-
 	if (stringmemory == NULL) /* check if malloc failed */
-	{
+		free(stringmemory);
 		return (NULL);
-	}
-
-	/* save start of string memory address */
-	stringmemorystart = stringmemory;
-
+	stringmemorystart = stringmemory; /* save start of memory address */
 	while (name[j] != '\0') /* copy name to heap memory */
 	{
 		stringmemory[i] = name[j];
@@ -64,7 +48,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	stringmemory[i] = '\0';
 	j = 0;
-
 	while (owner[j] != '\0') /* copy owner to heap memory */
 	{
 		stringmemory[i] = owner[j];
@@ -72,10 +55,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		j++;
 	}
 	stringmemory[i] = '\0';
-
 	dog1->name = stringmemorystart;/* assign values */
 	dog1->age = age;
 	dog1->owner = stringmemorystart + namelength + 1;
-
 	return (dog1); /* return pointer to new dog */
 }
