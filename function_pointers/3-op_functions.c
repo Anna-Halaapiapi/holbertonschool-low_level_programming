@@ -1,4 +1,4 @@
-#include "function_pointers.h"
+#include "calc.h"
 #include <stdlib.h> /* for malloc, free, exit, NULL */
 #include <stdio.h>
 
