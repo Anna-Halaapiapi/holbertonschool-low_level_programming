@@ -23,7 +23,7 @@ int (*get_op_func(char *s))(int, int)
 	while (i < 5)
 	{
 /* compare operator from command line to op in ops array for a match */
-		if (strcmp(op, ops[i].op) == 0)
+		if (strcmp(s, ops[i].op) == 0)
 	{
 		/* return the function from ops array index position */
 		return(ops[i].f);
