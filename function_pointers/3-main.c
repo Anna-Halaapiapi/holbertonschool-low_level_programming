@@ -13,6 +13,13 @@
 
 int main(int argc, char *argv[])
 {
+/* use atoi to convert arguments to int */
+	a = atoi(argv[1]);
+	op = atoi(argv[2]);
+	b = atoi(argv[3]);
+
+/* call function and print result */
+	printf("%d\n", f(a, b);
 
 /* status 98 */
 	if (argc != 4)
