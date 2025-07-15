@@ -22,11 +22,11 @@ int (*get_op_func(char *s))(int, int)
 /* loop through struct array */
 	while (i < 5)
 	{
-
-/* if operator match found - return pointer to func */
-	if (ops[i].op == *s)
+/* compare operator from command line to op in ops array for a match */
+		if (strcmp(op, ops[i].op) == 0)
 	{
-	return (ops[i].f);
+		/* return the function from ops array index position */
+		return(ops[i].f);
 	}
 
 	i = i + 1;
