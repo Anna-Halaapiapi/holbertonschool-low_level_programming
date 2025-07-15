@@ -18,7 +18,20 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	int i = 0;
+/* loop through struct array */
+	while (i < 5)
+	{
 
+/* if operator match found - return pointer to func */
+	if (ops[i].op == *s)
+	{
+	return (ops[i].f);
+	}
 
+	i = i + 1;
+
+	}
+/* if no match found - return NULL */
+	return (NULL);
 }
