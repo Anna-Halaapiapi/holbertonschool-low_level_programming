@@ -27,7 +27,7 @@ int (*get_op_func(char *s))(int, int)
 		if (strcmp(s, ops[i].op) == 0)
 	{
 		/* return the function from ops array index position */
-		return(ops[i].f);
+		return (ops[i].f);
 	}
 
 	i = i + 1;
