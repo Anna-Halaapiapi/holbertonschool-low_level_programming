@@ -1,6 +1,7 @@
 #include "3-calc.h"
 #include <stdlib.h> /* for malloc, free, exit, NULL */
 #include <stdio.h>
+#include <string.h>
 
 /**
  * main - entry point
@@ -12,8 +13,11 @@
  * OR Error (status 100) - if user divides (/ or %) by 0
  */
 
-int main(int argc, char *argv[])
+void main(int argc, char *argv[])
 {
+	int a;
+	int b;
+
 /* declare function pointer f */
 	int (*f)(int, int);
 /* match user inputted operator and assigns to f */
@@ -27,8 +31,8 @@ int main(int argc, char *argv[])
 	}
 
 /* use atoi to convert arguments to int */
-	int a = atoi(argv[1]);
-	int b = atoi(argv[3]);
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
 
 /* status 99 */
 	if (f == NULL)
@@ -45,5 +49,4 @@ int main(int argc, char *argv[])
 
 /* call function and print result */
 	printf("%d\n", f(a, b));
-
 }

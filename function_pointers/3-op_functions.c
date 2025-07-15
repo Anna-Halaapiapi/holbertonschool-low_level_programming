@@ -1,6 +1,7 @@
 #include "3-calc.h"
 #include <stdlib.h> /* for malloc, free, exit, NULL */
 #include <stdio.h>
+#include <string.h>
 
 /**
  * op_add - adds two numbers
