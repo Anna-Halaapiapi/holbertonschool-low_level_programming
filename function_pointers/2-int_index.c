@@ -28,4 +28,6 @@ int int_index(int *array, int size, int (*cmp)(int))
 	index = index + 1;
 	}
 	return (-1);
+
+	}
 }
