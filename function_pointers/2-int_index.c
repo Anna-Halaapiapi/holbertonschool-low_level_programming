@@ -21,13 +21,11 @@ int int_index(int *array, int size, int (*cmp)(int))
 	while (index < size)
 	{
 	cmp(array[index]);
-	if (cmp(array[index]) == 1
+	if (cmp(array[index]) == 1)
 	{
 	return (index);
 	}
 	index = index + 1;
 	}
 	return (-1);
-
-	}
 }
