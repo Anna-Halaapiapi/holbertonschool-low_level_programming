@@ -13,7 +13,7 @@
  * OR Error (status 100) - if user divides (/ or %) by 0
  */
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int a;
 	int b;
@@ -49,4 +49,5 @@ void main(int argc, char *argv[])
 
 /* call function and print result */
 	printf("%d\n", f(a, b));
+	return (0);
 }
