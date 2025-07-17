@@ -25,6 +25,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	if (n == 0)
 	{
 		printf("\n");
+		return;
 	}
 
 	while (index < (n - 1))
