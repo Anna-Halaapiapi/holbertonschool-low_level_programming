@@ -12,7 +12,7 @@
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	int index = 0;
+	unsigned int index = 0;
 	char *string; /* temp pointer to hold va_args value */
 	va_list list;
 
@@ -25,7 +25,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	while (index < (n - 1))
 	{
-		string = va_args(list, char *);
+		string = va_arg(list, char *);
 
 		if (string == NULL)
 		{
@@ -38,7 +38,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		index = index + 1;
 	}
-	printf("%s\n", va_args(list, char *));
+	printf("%s\n", va_arg(list, char *));
 
 	va_end(list);
 }
