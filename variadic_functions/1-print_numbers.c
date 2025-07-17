@@ -21,6 +21,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		separator = "";
 	}
+
+	if (n == 0)
+	{
+		return (0);
+	}
+
 	while (index < (n - 1))
 	{
 		printf("%d%s", va_arg(list, unsigned int), separator);
