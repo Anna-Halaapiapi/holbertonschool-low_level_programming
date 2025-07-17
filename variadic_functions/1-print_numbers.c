@@ -24,7 +24,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	if (n == 0)
 	{
-		return (0);
+		return;
 	}
 
 	while (index < (n - 1))
