@@ -29,7 +29,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		return;
 	}
 
-	while (index < (n - 1))
+	while (index < n)
 	{
 		string = va_arg(list, char *);
 
@@ -42,11 +42,14 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", string);
 		}
 
+		if (i < (n - 1))
+		{
 		printf("%s", separator);
+		}
 
 		index = index + 1;
 	}
-	printf("%s\n", va_arg(list, char *));
+	printf("\n");
 
 	va_end(list);
 }
