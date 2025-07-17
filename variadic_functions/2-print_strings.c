@@ -23,6 +23,12 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		separator = "";
 	}
 
+	if (n == 0)
+	{
+		printf("\n");
+		return;
+	}
+
 	while (index < (n - 1))
 	{
 		string = va_arg(list, char *);
