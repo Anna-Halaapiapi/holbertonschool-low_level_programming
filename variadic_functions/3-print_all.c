@@ -39,11 +39,7 @@ void print_string(va_list *list)
 {
 	char *str = va_arg(*list, char *);
 
-	if (str == NULL) /* check for NULL string */
-{
-	printf("(nil)");
-	return;
-}
+	str = str ? str : "(nil)"; /* if str NULL - replace with (nil) */
 	printf("%s", str);
 }
 
