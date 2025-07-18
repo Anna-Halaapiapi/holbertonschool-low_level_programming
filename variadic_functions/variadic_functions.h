@@ -1,6 +1,8 @@
 #ifndef VARIADIC_FUNCTIONS_H
 #define VARIADIC_FUNCTIONS_H
 
+#include <stdarg.h> /* for va_start, va_arg, and va_end */
+
 /* custom header */
 
 int _putchar(char c);
