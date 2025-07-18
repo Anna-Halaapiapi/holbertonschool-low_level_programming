@@ -28,7 +28,7 @@ void print_int(va_list *list)
  */
 void print_float(va_list *list)
 {
-	printf("%.2f", va_arg(*list, double));
+	printf("%f", va_arg(*list, double));
 }
 /**
  * print_string - prints a string.
