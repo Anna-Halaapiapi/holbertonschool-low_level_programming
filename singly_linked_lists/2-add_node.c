@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <string.h> /* for strdup */
+#include <string.h> /* for strdup & strlen */
 #include <stdlib.h> /* for malloc, NULL */
 
 /**
@@ -23,6 +23,9 @@ list_t *add_node(list_t **head, const char *str)
 
 	/* duplicate string to newnode */
 	newnode->str = strdup(str);
+
+	/* set length for new node */
+	newnode->len = strlen(newnode->str);
 
 	/* make newnode's next point to current head */
 	newnode->next = *head;
