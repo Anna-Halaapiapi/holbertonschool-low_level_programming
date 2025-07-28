@@ -12,22 +12,24 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-
 	/* malloc for new node */
-	list_t *link = malloc(sizeof(list_t));
+	list_t *newnode = malloc(sizeof(list_t));
 
-	link->str = str;
-
-	/* if malloc fails */
-	if link == NULL
+	/* if malloc fails return NULL */
+	if (newnode == NULL)
 	{
 	return (NULL);
 	}
-	/* point it to the old first node */
-	link->next = head;
 
-	/* point first to new first node */
-	head = link;
+	/* duplicate string to newnode */
+	newnode->str = strdup(str);
 
-	return (link);
+	/* make newnode's next point to current head */
+	newnode->next = *head;
+
+	/* update head to point to new node */
+	*head = newnode;
+
+	/* return address of new element */
+	return (newnode);
 }
