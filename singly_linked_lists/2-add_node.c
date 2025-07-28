@@ -3,6 +3,26 @@
 #include <stdlib.h> /* for malloc, NULL */
 
 /**
+ * _strlen - returns length of a string
+ * @s: pointer to string s
+ * Return: length of string as int
+ */
+
+int _strlen(char *s)
+
+{
+	int counter = 0;
+
+	while (*s != '\0')
+	{
+		counter = counter + 1;
+		s = s + 1;
+	}
+
+	return (counter);
+}
+
+/**
  * add_node - adds a new node to beginning of list
  * @head: double pointer to head of list
  * @str: pointer to string in node
@@ -25,7 +45,7 @@ list_t *add_node(list_t **head, const char *str)
 	newnode->str = strdup(str);
 
 	/* set length for new node */
-	newnode->len = strlen(newnode->str);
+	newnode->len = _strlen(newnode->str);
 
 	/* make newnode's next point to current head */
 	newnode->next = *head;
