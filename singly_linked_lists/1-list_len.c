@@ -11,7 +11,7 @@
 
 size_t list_len(const list_t *h)
 {
-	unsigned int num; /* keep track of number of elements */
+	unsigned int num = 0; /* keep track of number of elements */
 
 	while (h != NULL)
 	{
