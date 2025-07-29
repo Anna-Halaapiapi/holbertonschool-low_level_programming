@@ -37,13 +37,11 @@ list_t *add_node_end(list_t **head, const char *str)
 
 /* allocate memory for new node */
 	newnode = malloc(sizeof(list_t));
-
 /* if malloc fails return NULL */
 	if (newnode == NULL)
 	{
 		return (NULL);
 	}
-
 /* copy str to newnode */
 	newnode->str = strdup(str);
 
@@ -57,7 +55,7 @@ list_t *add_node_end(list_t **head, const char *str)
 /* set length for newnode */
 	newnode->len = _strlen(newnode->str);
 
-	end = *head;
+	*end = *head;
 
 /* point to old first node */
 	while (end->next != NULL)
