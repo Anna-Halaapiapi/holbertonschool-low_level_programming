@@ -56,7 +56,7 @@ list_t *add_node_end(list_t **head, const char *str)
 /* set length for newnode */
 	newnode->len = _strlen(newnode->str);
 
-	end = head;
+	end = *head;
 
 /* point to old first node */
 	while (end->next != NULL)
