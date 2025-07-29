@@ -33,6 +33,7 @@ int _strlen(char *s)
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *newnode;
+	list_t *end;
 
 /* check if str is NULL first */
 	if (str == NULL)
@@ -55,7 +56,7 @@ list_t *add_node_end(list_t **head, const char *str)
 /* set length for newnode */
 	newnode->len = _strlen(newnode->str);
 
-	list_t *end = head;
+	end = head;
 
 /* point to old first node */
 	while (end->next != NULL)
