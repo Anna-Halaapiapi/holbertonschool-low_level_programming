@@ -44,6 +44,13 @@ list_t *add_node(list_t **head, const char *str)
 	/* duplicate string to newnode */
 	newnode->str = strdup(str);
 
+	/* free newnode memory if str is NULL */
+	if (newnode->str == NULL)
+	{
+		free(newnode);
+		return (NULL);
+	}
+
 	/* set length for new node */
 	newnode->len = _strlen(newnode->str);
 
