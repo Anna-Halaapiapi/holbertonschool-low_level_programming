@@ -16,6 +16,8 @@ void free_list(list_t *head)
 	while (current != NULL)
 	{
 		nextnode = current->next; /* save pointer to next node */
+		free(current->str);/* free string in current node */
+		free(current->len);/* free length data in current node */
 		free(current); /* free current node */
 		current = nextnode; /* move to next node */
 	}
