@@ -35,12 +35,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *newnode;
 	list_t *end;
 
-/* check if str is NULL first */
-	if (str == NULL)
-	{
-		return (NULL);
-	}
-
 /* allocate memory for new node */
 	newnode = malloc(sizeof(list_t));
 
@@ -52,6 +46,13 @@ list_t *add_node_end(list_t **head, const char *str)
 
 /* copy str to newnode */
 	newnode->str = strdup(str);
+
+/* free newmode if str is NULL */
+	if (newnode->str == NULL)
+	{
+		free(newnode);
+		return (NULL);
+	}
 
 /* set length for newnode */
 	newnode->len = _strlen(newnode->str);
