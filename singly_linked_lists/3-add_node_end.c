@@ -35,41 +35,40 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *newnode;
 	list_t *end;
 
-/* allocate memory for new node */
-	newnode = malloc(sizeof(list_t));
+	newnode = malloc(sizeof(list_t)); /* malloc space for new node */
 
-/* if malloc fails return NULL */
-	if (newnode == NULL)
+	if (newnode == NULL) /* if malloc fails return NULL */
 	{
 		return (NULL);
 	}
-/* copy str to newnode */
-	newnode->str = strdup(str);
 
-/* free newmode if str is NULL */
-	if (newnode->str == NULL)
+	newnode->str = strdup(str); /* copy str to newnode */
+
+	if (newnode->str == NULL) /* free newmode if str is NULL */
 	{
 		free(newnode);
 		return (NULL);
 	}
 
-/* set length for newnode */
-	newnode->len = _strlen(newnode->str);
+	newnode->len = _strlen(newnode->str); /* set length for newnode */
+	newnode->next = NULL; /* point newnode to NULL to mark end of list */
 
-/* point newnode to NULL to mark end of list */
-	newnode->next = NULL;
-
-	end = *head;
-
-/* traverse list to the end */
-	while (end->next != NULL)
+	if (*head == NULL) /* handle empty string, make newnode the last node */
 	{
-		end = end->next;
+		*head = newnode;
+		return (newnode);
+	}
+	else
+	{
+	end = *head; /* end points to first node on list */
+
+	while (end->next != NULL) /* traverse list to the end */
+	{
+		end = end->next;/* point end to next node */
+	}
 	}
 
-/* attach newnode to end of list */
-	end->next = newnode;
+	end->next = newnode; /* add newnode to end of list */
 
-/* return address of new element */
-	return (newnode);
+	return (newnode); /* return address of new element */
 }
