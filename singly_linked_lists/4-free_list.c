@@ -19,6 +19,4 @@ void free_list(list_t *head)
 		free(current); /* free current node */
 		current = nextnode; /* move to next node */
 	}
-
-	*head = NULL; /* set head to NULL after freeing all nodes */
 }
