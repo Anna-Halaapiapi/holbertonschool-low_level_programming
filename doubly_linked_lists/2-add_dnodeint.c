@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <string.h> /* for strdup & strlen */
+0;10;1c#include <string.h> /* for strdup & strlen */
 #include <stdlib.h> /* for malloc, NULL */
 
 /**
@@ -25,7 +25,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 	if (*head != NULL)/* check if list is empty */
 	{
-		*head->prev = newnode;/* point old first node prev to newnode */
+		(*head)->prev = newnode;/* point old first node prev to newnode */
 	}
 	*head = newnode; /* point head to newnode */
 
