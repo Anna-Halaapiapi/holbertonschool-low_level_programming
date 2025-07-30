@@ -31,6 +31,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		prevnode = prevnode->next; /* move to next node */
 		counter = counter + 1;
 	}
+/* check if idx greater than list length */
+	if (prevnode == NULL)
+	{
+		return (NULL);
+	}
 
 /* call add_dnodeint_end to add node to end of list if required */
 	if (prevnode->next == NULL)
@@ -38,7 +43,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return(add_dnodeint_end(h, n));
 	}
 
-/* find next node for newnode */
 	nextnode = prevnode->next;
 
 /* malloc newnode and check for failure */
