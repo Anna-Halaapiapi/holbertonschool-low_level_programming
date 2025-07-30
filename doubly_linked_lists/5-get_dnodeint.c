@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stdio.h>
+0;10;1c#include <stdio.h>
 #include <stddef.h>
 
 /**
@@ -11,7 +11,7 @@
 
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	int counter = 0;
+	unsigned int counter = 0;
 	dlistint_t *currentnode = head;
 
 	while (counter < index)
