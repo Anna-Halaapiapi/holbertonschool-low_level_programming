@@ -20,7 +20,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *nextnode;
 	dlistint_t *newnode;
 
-/* call 2-add_dnodeint.c if idx is 0 to add at start of list*/
+/* call 2-add_dnodeint.c to add node to start of list */
 	if (idx == 0)
 	{
 		return(add_dnodeint(h, n));
@@ -38,7 +38,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	newnode->n = n;
 
 /* traverse list to find prev node for newnode */
-	while (counter < idx && prevnode != NULL)
+	while (counter < (idx - 1) && prevnode != NULL)
 	{
 		prevnode = prevnode->next; /* move to next node */
 		counter = counter + 1;
