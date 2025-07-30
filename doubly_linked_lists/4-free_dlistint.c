@@ -11,8 +11,8 @@
 void free_dlistint(dlistint_t *head)
 {
 
-	free_dlistint *current = head; /* to store current node */
-	free_dlistint *nextnode; /* to store next node */
+	dlistint_t *current = head; /* to store current node */
+	dlistint_t *nextnode; /* to store next node */
 
 	while (current != NULL)
 	{
