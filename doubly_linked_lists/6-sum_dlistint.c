@@ -13,7 +13,7 @@ int sum_dlistint(dlistint_t *head)
 {
 	int sum = 0; /* to sum n in all nodes */
 
-	if (*head == NULL) /* check if list is empty */
+	if (head == NULL) /* check if list is empty */
 	{
 		return (0);
 	}
