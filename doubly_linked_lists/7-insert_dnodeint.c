@@ -18,6 +18,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int counter = 0;
 	dlistint_t *prevnode = *h; /* start at node 1 */
 	dlistint_t *nextnode;
+	dlistint_t *newnode;
 
 /* call 2-add_dnodeint.c if idx is 0 to add at start of list*/
 	if (idx == 0)
@@ -26,7 +27,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 
 /* malloc newnode and check for failure */
-	dlistint_t *newnode = malloc(sizeof(dlistint_t));
+	newnode = malloc(sizeof(dlistint_t));
 
 	if (newnode == NULL)
 	{
