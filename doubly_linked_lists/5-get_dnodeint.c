@@ -11,14 +11,14 @@
 
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	unsigned int counter = 0;
-	dlistint_t *currentnode = head;
+	unsigned int counter = 0; /* counter for list traversal */
+	dlistint_t *currentnode = head;/* point currentnode to node 1 in list */
 
-	while (counter < index)
+	while (counter < index && currentnode != NULL) /* traverse the list */
 	{
-		currentnode = currentnode->next;
+		currentnode = currentnode->next;/* move to next node */
 		counter = counter + 1;
 	}
 
-	return (currentnode->next);
+	return (currentnode); /* return the nth node */
 }
