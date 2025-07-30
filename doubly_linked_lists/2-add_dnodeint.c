@@ -1,5 +1,5 @@
 #include "lists.h"
-0;10;1c#include <string.h> /* for strdup & strlen */
+#include <string.h> /* for strdup & strlen */
 #include <stdlib.h> /* for malloc, NULL */
 
 /**
