@@ -67,8 +67,15 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	delnode = prevnode->next; /* find node to be deleted */
 	nextnode = delnode->next; /* find node after node to be deleted */
 
-	prevnode->next = nextnode; /* update pointers */
-	nextnode->prev = prevnode;
+	if (nextnode == NULL) /* check if delnode is last */
+	{
+		prevnode->next = NULL;
+	}
+       else /* else if delnode is not last */
+	{
+		prevnode->next = nextnode;
+		nextnode->prev = prevnode;
+	}
 
 	free(delnode); /* free the node to be deleted from memory */
 
