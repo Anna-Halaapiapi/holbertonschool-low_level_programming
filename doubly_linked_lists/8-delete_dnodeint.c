@@ -4,6 +4,37 @@
 #include <stdlib.h> /* for malloc, NULL */
 
 /**
+ * delete_at_beginning - deletes node at beginning of list
+ * @head: double pointer to head
+ *
+ * Return: 1 (success) or -1 (fail)
+ */
+
+int delete_at_beginning(dlistint_t **head)
+{
+	dlistint_t *delnode = *head; /* node to be deleted */
+	dlistint_t *nextnode; /* node after node to be deleted */
+
+	if (*head == NULL)/* check if list is empty */
+	{
+		return (-1);
+	}
+
+	nextnode = delnode->next; /* store node 2 in nextnode */
+	*head = nextnode; /* update head to node 2 */
+
+	if (nextnode != NULL) /* if more than one node in list */
+	{
+		nextnode->prev = NULL; /* update prev pointer of new node 1 */
+	}
+
+	free(delnode); /* free delnode from memory */
+
+	return (1); /* return 1 for success */
+}
+
+
+/**
  * delete_dnodeint_at_index - deletes node at a given position
  * @head: double pointer to head
  * @index: index of list where new node should be deleted (starts at 0)
@@ -18,6 +49,10 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *nextnode; /* node after node to be deleted */
 	dlistint_t *delnode; /* node to be deleted */
 
+	if (index == 0) /* call helper if deleting first node in list */
+	{
+		return (delete_at_beginning(head));
+	}
 	while (counter < (index - 1) && prevnode != NULL) /* find prevnode */
 	{
 		prevnode = prevnode->next;
