@@ -71,7 +71,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		prevnode->next = NULL;
 	}
-       else /* else if delnode is not last */
+	else /* else if delnode is not last */
 	{
 		prevnode->next = nextnode;
 		nextnode->prev = prevnode;
