@@ -16,7 +16,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	unsigned int counter = 0; /* counter for list traversal */
 	dlistint_t *prevnode = *head; /* node prev to node to be deleted */
 	dlistint_t *nextnode; /* node after node to be deleted */
-	dlistint_t delnode; /* node to be deleted */
+	dlistint_t *delnode; /* node to be deleted */
 
 	while (counter < (index - 1) && prevnode != NULL) /* find prevnode */
 	{
