@@ -14,6 +14,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	ssize_t bytesread; /* keep track of bytes read */
+	ssize_t byteswritten; /* keep track of bytes written */
 	char buffer[10000]; /* buffer to hold read contents of file */
 	int i = 0; /* track position in buffer */
 	int fd; /* file descriptor */
@@ -37,17 +38,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	while (i < bytesread) /* loop through chars in buffer */
+	byteswritten = write(STDOUT_FILENO, buffer, bytesread);
+
+	if (byteswritten != bytesread)
 	{
-		if (_putchar(buffer[i]) == -1)/* print to stdout & check fail */
-		{
-			close(fd);
-			return (0);
-		}
-		i++;
+		close(fd);
+		return (0);
 	}
 
-	close(fd); /* close fd */
-
-	return (bytesread); /* return number of letters read */
+	close(fd);
+	return (byteswritten); /* return number of letters read */
 }
