@@ -13,8 +13,8 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t bytesread; /* keep track of bytes read */
-	ssize_t byteswritten; /* keep track of bytes written */
+	ssize_t bytesread; /* bytes actually read */
+	ssize_t byteswritten; /* bytes actually written */
 	char buffer[10000]; /* buffer to hold read contents of file */
 	int fd; /* file descriptor */
 
@@ -37,14 +37,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
+/* write the read bytes to stdout */
 	byteswritten = write(STDOUT_FILENO, buffer, bytesread);
 
-	if (byteswritten != bytesread)
+	if (byteswritten != bytesread)/* check if all read bytes were written */
 	{
 		close(fd);
-		return (0);
+		return (0); /* return fail if not all bytes were written */
 	}
 
 	close(fd);
-	return (byteswritten); /* return number of letters read */
+	return (byteswritten); /* return number of letters written */
 }
