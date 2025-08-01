@@ -22,7 +22,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	fd = open(filename, O_APPEND); /* open required file */
+	fd = open(filename, O_APPEND | O_WRONLY); /* open required file */
 
 	if (fd == -1) /* error if sys call fails */
 		return (-1);
