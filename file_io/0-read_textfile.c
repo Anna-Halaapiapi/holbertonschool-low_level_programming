@@ -16,7 +16,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t bytesread; /* keep track of bytes read */
 	ssize_t byteswritten; /* keep track of bytes written */
 	char buffer[10000]; /* buffer to hold read contents of file */
-	int i = 0; /* track position in buffer */
 	int fd; /* file descriptor */
 
 	if (filename == NULL) /* check if filename is NULL */
