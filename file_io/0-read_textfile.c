@@ -1,6 +1,7 @@
 #include "main.h"
 #include <unistd.h> /* for read,write,close */
 #include <stdlib.h> /* for NULL */
+#include <fcntl.h> /* for open */
 
 /**
  * read_textfile - reads a txt file and prints it to POSIX stdout
@@ -25,8 +26,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1) /* return 0 if open fails */
 		return (0);
 
-	if (letters > buffer) /* limit letters to size of buffer if greater */
-		letters = 1024;
+	if (letters > sizeof(buffer)) /* limit letters to size of buffer */
+		letters = sizeof(buffer);
 
 	bytesread = read(fd, buffer, letters);/* read file into buffer */
 
