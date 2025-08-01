@@ -4,19 +4,6 @@
 #include <fcntl.h> /* for open */
 
 /**
- * __putchar - writes the character c to stderr
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-
-int __putchar(char c)
-{
-	return (write(2, &c, 1));
-}
-
-/**
  * read_textfile - reads a txt file and prints it to POSIX stdout
  * @filename: pointer to file to read and print
  * @letters: number of letters to read and print
