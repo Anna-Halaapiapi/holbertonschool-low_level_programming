@@ -32,8 +32,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	bytesread = read(fd, buffer, letters);/* read file into buffer */
 
 	if (bytesread == -1) /* if read fails */
+	{
 		close(fd);
 		return (0);
+	}
 
 	while (i < bytesread) /* loop through chars in buffer */
 	{
