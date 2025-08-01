@@ -11,7 +11,7 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 
-int _putchar(char c)
+int __putchar(char c)
 {
 	return (write(2, &c, 1));
 }
