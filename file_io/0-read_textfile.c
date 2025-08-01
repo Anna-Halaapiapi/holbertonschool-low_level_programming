@@ -1,5 +1,7 @@
 #include "main.h"
-#include "stdio.h" /* for NULL */
+#include <stdio.h> /* for NULL */
+#include <sys/types.h> /* for ssize_t */
+#include <stddef.h> /* for size_t */
 
 /**
  * read_textfile - reads a txt file and prints it to POSIX stdout
