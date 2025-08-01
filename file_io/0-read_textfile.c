@@ -17,22 +17,32 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int i = 0; /* track position in buffer */
 	int fd; /* file descriptor */
 
-	if (filename == NULL) /* return 0 if filename is NULL */
+	if (filename == NULL) /* check if filename is NULL */
 		return (0);
 
 	fd = open(filename, O_RDONLY); /* open file and obtain fd */
 
-		if (fd == -1) /* return 0 if open fails */
-			return (0);
+	if (fd == -1) /* return 0 if open fails */
+		return (0);
 
-	bytesread = read(fd, buffer, sizeof(buffer));/* read file into buffer */
+	if (letters > buffer) /* limit letters to size of buffer if greater */
+		letters = 1024;
 
-	if (bytesread == -1) /* return 0 if read fails */
+	bytesread = read(fd, buffer, letters);/* read file into buffer */
+
+	if (bytesread == -1) /* if read fails */
+		close(fd);
 		return (0);
 
 	while (i < bytesread) /* loop through chars in buffer */
 	{
 		_putchar(buffer[i]); /* print from buffer to stdout */
+
+		if (buffer[i] == -1) /* if write fails */
+		{
+			close(fd);
+			return (0);
+		}
 		i++;
 	}
 
