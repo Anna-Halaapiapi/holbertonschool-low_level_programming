@@ -1,7 +1,6 @@
 #include "main.h"
-#include <stdio.h> /* for NULL */
-#include <sys/types.h> /* for ssize_t */
-#include <stddef.h> /* for size_t */
+#include <unistd.h> /* for read,write,close */
+#include <stdlib.h> /* for NULL */
 
 /**
  * read_textfile - reads a txt file and prints it to POSIX stdout
@@ -16,25 +15,20 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t bytesread; /* keep track of bytes read */
 	char buffer[1024]; /* buffer to hold read contents of file */
 	int i = 0; /* track position in buffer */
+	int fd; /* file descriptor */
 
-	if (*filename == NULL) /* return 0 if filename is NULL */
-	{
+	if (filename == NULL) /* return 0 if filename is NULL */
 		return (0);
-	}
 
-	int fd = open(*filename, O_RDONLY) /* open file and obtain FD */
+	fd = open(filename, O_RDONLY); /* open file and obtain fd */
 
 		if (fd == -1) /* return 0 if open fails */
-		{
 			return (0);
-		}
 
 	bytesread = read(fd, buffer, sizeof(buffer));/* read file into buffer */
 
 	if (bytesread == -1) /* return 0 if read fails */
-	{
 		return (0);
-	}
 
 	while (i < bytesread) /* loop through chars in buffer */
 	{
