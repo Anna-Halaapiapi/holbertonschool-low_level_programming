@@ -39,7 +39,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	while (i < bytesread) /* loop through chars in buffer */
 	{
-		if (__putchar(buffer[i]) == -1)/* print to stdout & check fail */
+		if (_putchar(buffer[i]) == -1)/* print to stdout & check fail */
 		{
 			close(fd);
 			return (0);
