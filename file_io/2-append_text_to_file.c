@@ -2,6 +2,7 @@
 #include <unistd.h> /* for read,write,close */
 #include <stdlib.h> /* for NULL */
 #include <fcntl.h> /* for open */
+#include <string.h> /* for strlen */
 
 /**
  * append_text_to_file - appends text at end of file
@@ -32,7 +33,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (1);
 	}
 	else /* else append text to end of file */
-		byteswritten = write(fd, text_content, sizeof(text_content) - 1);
+		byteswritten = write(fd, text_content, strlen(text_content));
 
 	if (byteswritten == -1) /* error if write sys call fails */
 	{
