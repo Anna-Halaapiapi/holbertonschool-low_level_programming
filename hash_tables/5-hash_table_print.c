@@ -19,14 +19,12 @@ void hash_table_print(const hash_table_t *ht)
 	if (ht == NULL) /* check for NULL */
 		return;
 
-	node = ht->array[index]; /* start node at first node of list */
-
 	/* loop through buckets/array */
 	while (index < ht->size)
 	{
+		node = ht->array[index]; /* start node at first node of list */
 
-		/* loop through nodes in list */
-		while (node != NULL)
+		while (node != NULL) /* loop through nodes in list */
 		{
 			/* print key & value in node */
 			printf("'%s' : '%s',", node->key, node->value);
