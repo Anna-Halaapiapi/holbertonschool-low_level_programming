@@ -22,14 +22,14 @@ void hash_table_print(const hash_table_t *ht)
 	node = ht->array[index]; /* start node at first node of list */
 
 	/* loop through buckets/array */
-	while (ht->array[index] < ht->size)
+	while (index < ht->size)
 	{
 
 		/* loop through nodes in list */
 		while (node != NULL)
 		{
 			/* print key & value in node */
-			printf("/'%s/' : /'%s/',", node->key, node->value);
+			printf("'%s' : '%s',", node->key, node->value);
 			node = node->next; /* move to next node */
 		}
 
