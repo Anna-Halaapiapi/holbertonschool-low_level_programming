@@ -19,6 +19,8 @@ void hash_table_print(const hash_table_t *ht)
 	if (ht == NULL) /* check for NULL */
 		return;
 
+	printf("{"); /* print opening bracket */
+
 	/* loop through buckets/array */
 	while (index < ht->size)
 	{
@@ -27,10 +29,12 @@ void hash_table_print(const hash_table_t *ht)
 		while (node != NULL) /* loop through nodes in list */
 		{
 			/* print key & value in node */
-			printf("'%s' : '%s',", node->key, node->value);
+			printf("'%s': '%s',", node->key, node->value);
 			node = node->next; /* move to next node */
 		}
 
 		index++; /* move to next bucket */
 	}
+
+	printf("}"); /* print closing bracket */
 }
