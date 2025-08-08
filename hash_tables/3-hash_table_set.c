@@ -52,24 +52,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			return (1); /* return success */
 		}
 
-		else /* if key is not found */
-		{
-			/* create new node */
-			new_node = malloc(sizeof(hash_node_t));
-			if (new_node == NULL) /* if malloc fails */
-			{
-				return (0); /* return fail */
-			}
-
-			new_node->key = strdup(key);/* set values of new node */
-			new_node->value = strdup(value);
-
-			/* insert node at start of list */
-			new_node->next = ht->array[index];
-		}
-
 		node = node->next; /* go to next node in list */
 	}
+		/* key not found - create new node */
+		new_node = malloc(sizeof(hash_node_t));
+		if (new_node == NULL) /* if malloc fails */
+		{
+			return (0); /* return fail */
+		}
+		new_node->key = strdup(key);/* set values of new node */
+		new_node->value = strdup(value);
+		/* insert node at start of list */
+		new_node->next = ht->array[index];
 
 	return (1);
 }
