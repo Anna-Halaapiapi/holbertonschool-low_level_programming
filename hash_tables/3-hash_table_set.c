@@ -1,5 +1,5 @@
 #include "hash_tables.h"
-#include <stddef.h>
+0;10;1c#include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -21,7 +21,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (key == NULL || ht == NULL) /* check for NULL */
 		return (0);
 
-	index = key_index(key, ht->size);/*find key's index (bucket to search)*/
+	/*find key's index (bucket to search)*/
+	index = key_index((const unsigned char *)key, ht->size);
 
 	node = ht->array[index]; /* start at first node of list/bucket */
 
