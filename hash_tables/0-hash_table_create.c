@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include <stddef.h>
 
 /**
  * hash_table_create - creates a hash table
@@ -19,4 +20,5 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (new_table == NULL)
 		return (NULL);
 
+	return (new_table);
 }
