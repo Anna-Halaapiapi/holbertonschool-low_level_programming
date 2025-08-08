@@ -42,5 +42,5 @@ void hash_table_print(const hash_table_t *ht)
 		index++; /* move to next bucket */
 	}
 
-	printf("}"); /* print closing bracket */
+	printf("}\n"); /* print closing bracket & newline */
 }
