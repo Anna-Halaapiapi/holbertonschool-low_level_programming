@@ -14,16 +14,20 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 
-	hash_node_t bucket; /* find index of bucket */
+	hash_node_t *bucket; /* find index of bucket */
+	unsigned long int index; /* index of key */
 
 	if (ht == NULL || key == NULL) /* check for NULL */
 		return (NULL);
+
+	/* get index of key */
+	index = key_index((const unsigned char *)key, ht->size);
 
 	bucket = ht->array[index]; /* start node at bucket/first node of list */
 
 	while (bucket != NULL) /* search list for key */
 	{
-		if (bucket->key == key) /* if key is found */
+		if (strcmp(bucket->key, key) == 0) /* if key is found */
 		{
 			return (bucket->value); /* return value */
 		}
