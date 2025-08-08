@@ -31,7 +31,7 @@ void hash_table_print(const hash_table_t *ht)
 		{
 			if (comma == 1)
 			{
-				printf(","); /* print comma */
+				printf(", "); /* print comma */
 			}
 			/* print key & value in node */
 			printf("'%s': '%s'", node->key, node->value);
