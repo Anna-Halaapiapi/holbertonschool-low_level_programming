@@ -15,6 +15,7 @@ void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int index = 0; /* start array index at 0 */
 	hash_node_t *node; /* tracker for nodes in list */
+	int comma = 0; /* 0: false 1: true. Flag to control comma placement */
 
 	if (ht == NULL) /* check for NULL */
 		return;
@@ -28,9 +29,14 @@ void hash_table_print(const hash_table_t *ht)
 
 		while (node != NULL) /* loop through nodes in list */
 		{
+			if (comma == 1)
+			{
+				printf(","); /* print comma */
+			}
 			/* print key & value in node */
-			printf("'%s': '%s',", node->key, node->value);
+			printf("'%s': '%s'", node->key, node->value);
 			node = node->next; /* move to next node */
+			comma = 1;/* change flag to 1st element printed = true*/
 		}
 
 		index++; /* move to next bucket */
