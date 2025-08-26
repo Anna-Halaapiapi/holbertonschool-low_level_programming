@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
 	if (to_fd == -1)
 		exit_99(argv[2]);
 
-	while ((bytesread = read(from_fd, buffer, sizeof(buffer))) > 0)
+	while ((bytesread = read(from_fd, buffer, sizeof(buffer))) != 0)
 	{
 		if (bytesread == -1)
 		{
