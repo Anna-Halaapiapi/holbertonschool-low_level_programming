@@ -81,14 +81,14 @@ int main(int argc, char *argv[])
 
 	while ((bytesread = read(from_fd, buffer, sizeof(buffer))) > 0)
 	{
-		byteswritten = write(to_fd, buffer, bytesread);
-
 		if (bytesread == -1)
 		{
 			exit_98(argv[1]);
 		}
 
-		if (byteswritten != bytesread)
+		byteswritten = write(to_fd, buffer, bytesread);
+
+		if (byteswritten != bytesread || byteswritten == -1)
 		{
 			exit_99(argv[2]);
 		}
