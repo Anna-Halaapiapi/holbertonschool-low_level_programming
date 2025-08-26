@@ -62,8 +62,7 @@ void exit_100(int fd)
 
 int main(int argc, char *argv[])
 {
-	int from_fd;
-	int to_fd;
+	int from_fd, to_fd;
 	char buffer[1024];
 	ssize_t bytesread, byteswritten;
 
@@ -79,26 +78,27 @@ int main(int argc, char *argv[])
 	if (to_fd == -1)
 		exit_99(argv[2]);
 
-	while ((bytesread = read(from_fd, buffer, sizeof(buffer))) > 0)
+	while (1)
 	{
-		byteswritten = write(to_fd, buffer, bytesread);
+		bytesread = read(from_fd, buffer, sizeof(buffer));
+		if (bytesread == -1)
+		{
+			exit_98(argv[1]);
+		}
+		if (bytesread == 0)
+		{
+			break;
+		}
 
+		byteswritten = write(to_fd, buffer, bytesread);
 		if (byteswritten != bytesread || byteswritten == -1)
 		{
 			exit_99(argv[2]);
 		}
 	}
-
-	if (bytesread == -1)
-		{
-			exit_98(argv[1]);
-		}
-
 	if (close(from_fd) == -1)
 		exit_100(from_fd);
-
 	if (close(to_fd) == -1)
 		exit_100(to_fd);
-
 	return (0);
 }
