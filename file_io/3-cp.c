@@ -79,13 +79,8 @@ int main(int argc, char *argv[])
 	if (to_fd == -1)
 		exit_99(argv[2]);
 
-	while ((bytesread = read(from_fd, buffer, sizeof(buffer))) != 0)
+	while ((bytesread = read(from_fd, buffer, sizeof(buffer))) > 0)
 	{
-		if (bytesread == -1)
-		{
-			exit_98(argv[1]);
-		}
-
 		byteswritten = write(to_fd, buffer, bytesread);
 
 		if (byteswritten != bytesread || byteswritten == -1)
@@ -93,6 +88,12 @@ int main(int argc, char *argv[])
 			exit_99(argv[2]);
 		}
 	}
+
+	if (bytesread == -1)
+		{
+			exit_98(argv[1]);
+		}
+
 	if (close(from_fd) == -1)
 		exit_100(from_fd);
 
