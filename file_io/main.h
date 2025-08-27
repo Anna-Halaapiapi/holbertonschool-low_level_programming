@@ -2,7 +2,11 @@
 #define MAIN_H
 
 #include <stddef.h> /* for size_t */
-#include <sys/types.h> /* for ssize_t */
+#include <stdio.h> /* printf */
+#include <stdlib.h> /* exit */
+#include <unistd.h> /* open */
+#include <fcntl.h> /* open flags */
+#include <sys/types.h> /* ssize_t */
 
 int _putchar(char c);
 ssize_t read_textfile(const char *filename, size_t letters);
