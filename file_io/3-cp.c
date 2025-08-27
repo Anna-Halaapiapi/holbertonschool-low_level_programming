@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h> /* printf */
 #include <stdlib.h> /* exit */
 #include <unistd.h> /* open */
